@@ -1,7 +1,7 @@
 # Drupal install using NGINX
 Based on Ubuntu Docker image.
 
-Script for automatic installation is present: [drupal_install_nginx.sh][ghsh](runs directly from image).
+Script for automatic installation is present: [drupal_install_nginx.sh][ghsh] (runs directly from image).
 
 ### Prerequisites
 
