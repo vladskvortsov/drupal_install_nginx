@@ -6,6 +6,8 @@ Script for automatic installation is present: [drupal_install_nginx.sh][ghsh].
 ### Prerequisites
 
 - Docker
+
+
 ### Dockerfile
 
 ```sh
@@ -21,8 +23,9 @@ COPY *.sh /home/
 docker build . -t drupal_install_nginx
 docker run -it -p 8080:81 --name ubuntu drupal_install_nginx
 ```
+> Note: `--name` ubuntu to name your container.
 
-## Step 2. Install NGINX, MariaDB php and additions.
+## Step 2. Install NGINX, MariaDB PHP and additions.
 
 Install NGINX and additions:
 
@@ -77,7 +80,7 @@ FLUSH PRIVILEGES;
 exit
 ```
 
-## Step 4. Install drupal.
+## Step 4. Install Drupal.
 
 Use wget to download archive, then unpack it:
 
@@ -95,8 +98,7 @@ sudo chown -R www-data:www-data /var/www/html/drupal/
 sudo chmod -R 755 /var/www/html/drupal/
 ```
 
-Add following in /etc/nginx/sites-enabled/drupal file to define
-host name (in my case examp.com, port in use 81):
+Add following in `/etc/nginx/sites-enabled/drupal` (hostname in my case `examp.com`, port in use 81):
 
 ```sh
 sudo echo 'server {
@@ -133,7 +135,7 @@ sudo /etc/init.d/php8.1-fpm reload
 sudo /etc/init.d/nginx reload
 ```
 
-To access Drupal open your browser and conect:
+To access Drupal open your browser and type:
 
 ```sh
 localhost:8080
