@@ -23,7 +23,7 @@ COPY *.sh /home/
 docker build . -t drupal_install_nginx
 docker run -it -p 8080:81 --name ubuntu drupal_install_nginx
 ```
-> Note: `--name` ubuntu to name your container.
+> Note: `--name ubuntu` ubuntu to name your container.
 
 ## Step 2. Install NGINX, MariaDB PHP and additions.
 
