@@ -4,7 +4,7 @@ echo 'Enter db root password:'
 read -s dbpass
 
 apt-get update -y
-apt-get install -y sudo wget nano curl expect
+apt-get install -y sudo wget nano curl #expect
 sudo add-apt-repository -y ppa:ondrej/php
 sudo add-apt-repository -y ppa:ondrej/nginx
 
@@ -49,8 +49,8 @@ sudo cp /var/www/html/drupal/sites/default/default.settings.php /var/www/html/dr
 sudo chown -R www-data:www-data /var/www/html/drupal/
 sudo chmod -R 755 /var/www/html/drupal/
 sudo echo 'server {
-        listen 80;
-        listen [::]:80;
+        listen 81;
+        listen [::]:81;
         root /var/www/html/drupal;
 
         # Add index.php to the list if you are using PHP
@@ -70,7 +70,7 @@ sudo echo 'server {
 
                 # With php-fpm (or other unix sockets):
                 fastcgi_pass unix:/run/php/php8.1-fpm.sock;
-#               # With php-cgi (or other tcp sockets):
+               # With php-cgi (or other tcp sockets):
         }
 
         location ~ /\.ht {
